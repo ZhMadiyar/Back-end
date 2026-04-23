@@ -4,7 +4,7 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
-
+#TODO изучить
     def deposit(self, amount:float ) -> None:
         if amount > 0:
             self.balance += amount
@@ -13,16 +13,18 @@ class BankAccount:
             print("Error: Wrong amount")
 
     def withdraw(self, amount:float) -> None:
-        if self.balance > 0 and amount <= self.balance:
+        if self.balance > 0 and amount <= self.balance and amount > 0:
             self.balance -= amount
             print(f"{self.owner} withdrew {amount}. Balance is {self.balance}")
+        elif amount <= 0:
+            print("Error: Wrong amount")
         else:
             print("Not enough money")
 
     def get_balance(self) -> float:
         return self.balance
 
-    def __str__(self) -> str:
+    def __str__(self) -> str: #TODO изучить
         return f"Account: {self.owner}, balance: {self.balance}"
 
     def operation(self) -> None:
@@ -32,7 +34,7 @@ class BankAccount:
                 "---------Choose operation-------------\n1. Deposit\n2. Withdraw\n3. Show Balance\n4. Show Account\n5. Exit")
             op = input("Enter your choice: ")
 
-            match op:
+            match op: #TODO
                 case "1":
                     try:
                         amount = float(input("Enter amount: "))
@@ -59,7 +61,7 @@ class BankAccount:
 if __name__ == "__main__":
 
     acc = {"tom":BankAccount("tom",2000), "max": BankAccount("max",3400)}
-    print("--------Welcome to Bank Account.-----------")
+    print("Welcome to Bank Account.")
     name = str(input("Enter your name: "))
 
 
