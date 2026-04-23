@@ -1,4 +1,3 @@
-
 def get_top_student(data: dict, n: int) -> list:
 
     new_list = [(name, sum(grade) / len(grade)) for name, grade in data.items() ]
