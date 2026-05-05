@@ -6,6 +6,8 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
     def __str__(self):
         return self.name
+
+
 class Task(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
